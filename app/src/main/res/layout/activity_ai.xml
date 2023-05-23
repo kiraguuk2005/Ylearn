@@ -8,11 +8,70 @@
     android:layout_height="match_parent"
     tools:context=".Ai">
 
-    <ImageView
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/linear"
+        android:layout_height="70dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profileImage"
+            android:layout_width="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:src="@drawable/user"
+            android:layout_marginStart="20dp"
+            android:scaleType="centerCrop"
+            tools:ignore="MissingClass" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:src="@drawable/logo2"
+            android:layout_marginTop="20dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_notifications_24"
+            android:layout_marginTop="27dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo2"
-        android:layout_marginTop="20dp"
-        />
+        android:orientation="horizontal">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="100dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your question here.."
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_send_24" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

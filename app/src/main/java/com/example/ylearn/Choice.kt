@@ -17,8 +17,8 @@ class Choice : AppCompatActivity() {
             startActivity(Intent(this, Ai::class.java))
         }
 
-        binding.btnHuman.setOnClickListener {
-            startActivity(Intent(this, AskHuman::class.java))
-        }
+//        binding.btnHuman.setOnClickListener {
+//            startActivity(Intent(this, AskHuman::class.java))
+//        }
     }
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ivClose"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_baseline_cancel_24"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:layout_marginStart="30dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Password"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+       android:layout_marginStart="80dp"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginEnd="50dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:drawableEnd="@drawable/ic_baseline_visibility_off_24"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Confirm Password"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginStart="80dp"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginEnd="50dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:drawableEnd="@drawable/ic_baseline_visibility_off_24"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="80dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#F2780C"
+            android:text="Save"
+            />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#F2780C"
+            android:text="Cancel"
+            />
+
+    </LinearLayout>
+
+
+    </LinearLayout>

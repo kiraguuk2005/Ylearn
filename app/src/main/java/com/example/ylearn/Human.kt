@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.ylearn.databinding.ActivityHumanBinding
 
+
 class Human : AppCompatActivity() {
 
     private lateinit var binding: ActivityHumanBinding
@@ -18,7 +19,7 @@ class Human : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        navController= Navigation.findNavController(this,R.id.activity_main_nav_host_fragment)
+        navController= Navigation.findNavController(this,R.id.fragmentContainerView)
         setupWithNavController(binding.bottomNavigationView,navController)
     }
 }

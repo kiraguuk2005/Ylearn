@@ -15,6 +15,7 @@ class Login : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             startActivity(Intent(this, Home::class.java))
+            finish()
         }
 
         binding.tvSignUp.setOnClickListener {

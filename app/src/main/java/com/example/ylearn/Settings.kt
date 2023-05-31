@@ -17,5 +17,14 @@ class Settings : AppCompatActivity() {
         binding.tvLogout.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
         }
+
+        binding.ivBack.setOnClickListener {
+            startActivity(Intent(this, UserProfile::class.java))
+        }
+
+        binding.ivToAccount.setOnClickListener {
+            startActivity(Intent(this, Account::class.java))
+        }
+
     }
 }

@@ -15,10 +15,12 @@ class Register : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
+            finish()
         }
 
         binding.tvSignIn.setOnClickListener {
             startActivity(Intent(this, Register::class.java))
+            finish()
         }
     }
 }

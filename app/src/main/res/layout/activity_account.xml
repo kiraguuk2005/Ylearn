@@ -60,11 +60,10 @@
         <ImageView
             android:id="@+id/ivAccInfo"
             android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
             android:layout_marginStart="90dp"
-            />
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
 
     </LinearLayout>
 

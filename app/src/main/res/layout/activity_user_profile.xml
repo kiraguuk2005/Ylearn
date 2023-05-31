@@ -15,6 +15,7 @@
         tools:ignore="MissingConstraints">
 
        <ImageView
+           android:id="@+id/ivBack"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:src="@drawable/ic_baseline_arrow_back_ios_24"
@@ -30,6 +31,7 @@
             android:src="@drawable/logo2" />
 
         <ImageView
+            android:id="@+id/ivSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="27dp"
@@ -67,6 +69,7 @@
         />
 
     <Button
+        android:id="@+id/editProfile"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:text="Edit Profile"

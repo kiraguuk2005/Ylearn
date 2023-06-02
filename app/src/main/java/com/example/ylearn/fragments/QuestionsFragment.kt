@@ -1,5 +1,7 @@
 package com.example.ylearn.fragments
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +9,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ylearn.FloatingForm
+import com.example.ylearn.QuestionDetail
 import com.example.ylearn.R
 import com.example.ylearn.adapter.QuestionsAdapter
+import com.example.ylearn.databinding.FragmentAiBinding
+import com.example.ylearn.databinding.FragmentQuestionsBinding
 import com.example.ylearn.model.QuestionsData
 
-class QuestionsFragment : Fragment() {
+class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
+
+    private  var _binding: FragmentQuestionsBinding?= null
+    private val binding  get() = _binding!!
+
 
     private lateinit var adapter: QuestionsAdapter
     private lateinit var recyclerView: RecyclerView
@@ -29,13 +39,18 @@ class QuestionsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        return inflater.inflate(R.layout.fragment_questions, container, false)
+        _binding = FragmentQuestionsBinding.inflate(inflater, container, false)
 
+
+        return binding.root
+
+//        return inflater.inflate(R.layout.fragment_questions, container, false)
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInitialize()
@@ -43,9 +58,26 @@ class QuestionsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.timeLineRecyclerView)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = QuestionsAdapter(questionArrayList)
+        adapter = QuestionsAdapter(questionArrayList, this)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
+
+        binding.FAB.setOnClickListener {
+            val intent = Intent(requireActivity(), FloatingForm::class.java)
+            startActivity(intent)
+        }
+
+    }
+
+    override fun onClickCard(id:Int) {
+        super.onClickCard(id)
+        when(id){
+            R.id.crdContent -> {
+                val intent = Intent(requireActivity(), QuestionDetail::class.java)
+                startActivity(intent)
+            }
+        }
+
     }
 
     private fun dataInitialize() {

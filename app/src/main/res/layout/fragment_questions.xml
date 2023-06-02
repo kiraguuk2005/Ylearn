@@ -15,4 +15,14 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="#F2780C"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        android:contentDescription="inflate" />
+
 </FrameLayout>

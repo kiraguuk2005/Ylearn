@@ -27,7 +27,10 @@ class Home : AppCompatActivity() {
             startActivity(Intent(this, Notifications::class.java))
         }
 
+
+
         setUpTabs()
+
 
 
     }

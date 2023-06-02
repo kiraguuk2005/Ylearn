@@ -14,7 +14,7 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext.setOnClickListener {
-            startActivity(Intent(this, Home::class.java))
+            startActivity(Intent(this, Choice::class.java))
             finish()
         }
 

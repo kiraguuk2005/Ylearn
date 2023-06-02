@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.ylearn.R
 import com.example.ylearn.adapter.ChatsAdapter
 import com.example.ylearn.databinding.FragmentAiBinding
 import com.example.ylearn.model.chatModel.ChatModel

@@ -12,7 +12,7 @@ class QuestionsAdapter(private val list: ArrayList<QuestionsData>, private val c
     inner class QuestionsView(val timeLineItemBinding: TimeLineItemBinding): RecyclerView.ViewHolder(timeLineItemBinding.root), View.OnClickListener {
         override fun onClick(view: View?) {
             if (adapterPosition != RecyclerView.NO_POSITION) {
-                clickListener.onClickCard(view!!.id)
+                clickListener.onClickCard(view?.id)
             }
         }
     }
@@ -37,7 +37,7 @@ class QuestionsAdapter(private val list: ArrayList<QuestionsData>, private val c
     }
 
     interface CardListener{
-        fun onClickCard(id:Int){
+        fun onClickCard(id:Int?){
 
         }
     }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +47,6 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
         return binding.root
 
-//        return inflater.inflate(R.layout.fragment_questions, container, false)
 
     }
 
@@ -69,12 +69,25 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
     }
 
-    override fun onClickCard(id:Int) {
+    override fun onClickCard(id:Int?) {
         super.onClickCard(id)
+        Toast.makeText(requireActivity(), id?.let {
+            it.toString()
+        }, Toast.LENGTH_SHORT).show()
         when(id){
             R.id.crdContent -> {
                 val intent = Intent(requireActivity(), QuestionDetail::class.java)
                 startActivity(intent)
+            }
+
+            R.id.share -> {
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                    type = "text/plain"
+                }
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
             }
         }
 

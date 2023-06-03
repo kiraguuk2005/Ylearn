@@ -23,6 +23,6 @@
         android:layout_margin="16dp"
         android:backgroundTint="#F2780C"
         android:src="@drawable/ic_baseline_add_circle_outline_24"
-        android:contentDescription="inflate" />
+        android:contentDescription="@string/inflate" />
 
 </FrameLayout>

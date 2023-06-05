@@ -28,14 +28,6 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var questionArrayList: ArrayList<QuestionsData>
 
-    lateinit var image: Array<Int>
-    lateinit var username: Array<String>
-    lateinit var topic: Array<String>
-    lateinit var message: Array<String>
-    lateinit var time: Array<String>
-    lateinit var views: Array<String>
-    lateinit var answers: Array<String>
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

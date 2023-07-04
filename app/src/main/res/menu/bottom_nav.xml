@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Books"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:id="@+id/icBooks"
+        />
+    <item android:title="Read PDF"
+        android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+        android:id="@+id/icPDF"
+        />
+
+</menu>

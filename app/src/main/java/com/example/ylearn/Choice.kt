@@ -28,5 +28,8 @@ class Choice : AppCompatActivity() {
             startActivity(Intent(this, Earn::class.java))
 
         }
+        binding.btnbooks.setOnClickListener {
+            startActivity(Intent(this, Books::class.java))
+        }
     }
 }

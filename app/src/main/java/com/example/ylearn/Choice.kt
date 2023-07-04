@@ -1,10 +1,9 @@
 package com.example.ylearn
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ylearn.databinding.ActivityChoiceBinding
-import com.example.ylearn.fragments.AiFragment
 
 class Choice : AppCompatActivity() {
 
@@ -23,6 +22,10 @@ class Choice : AppCompatActivity() {
 
         binding.btnAi.setOnClickListener {
             startActivity(Intent(this, Ai::class.java))
+
+        }
+        binding.btnEarn.setOnClickListener {
+            startActivity(Intent(this, Earn::class.java))
 
         }
     }

@@ -42,6 +42,25 @@
         android:layout_marginHorizontal="100dp"
         />
 
+    <Button
+        android:layout_marginVertical="30dp"
+        android:id="@+id/btnEarn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Earn"
+        android:backgroundTint="#F2780C"
+        android:layout_marginHorizontal="100dp"
+        />
+    <Button
+        android:layout_marginVertical="30dp"
+        android:id="@+id/btnbooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Books"
+        android:backgroundTint="#F2780C"
+        android:layout_marginHorizontal="100dp"
+        />
+
 
 
 </LinearLayout>

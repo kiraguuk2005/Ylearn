@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/ivPost"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/b8" />
 
@@ -27,16 +27,28 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_marginStart="5dp"
             android:text="River and the Source" />
 
         <TextView
             android:id="@+id/tvContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginStart="4dp"
-            android:text=" It begins roughly in the year 1870 when Akoko is born in the Luo village of Yimbo, where life is ruled by tradition." />
+            android:maxLines="2"
+            android:text="It begins roughly in the year 1870 when Akoko is born in the Luo village of Yimbo, where life is ruled by tradition." />
 
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="Ksh  700" />
 
         <Button
             android:id="@+id/btnMessage"
@@ -45,8 +57,8 @@
             android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:backgroundTint="#F2780C"
-            android:text="Buy                Ksh  700"
-            android:textSize="8sp" />
+            android:text="Buy"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

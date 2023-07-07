@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">#F2780C</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
     </style>
 
 </resources>

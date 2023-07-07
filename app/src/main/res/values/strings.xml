@@ -8,5 +8,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="inflate">inflate</string>
 
+    <string-array name="bookCategory">
+        <item>UnderGraduate</item>
+        <item>Senior Secondary</item>
+        <item>Junior Secondary</item>
+        <item>Primary</item>
+    </string-array>
+
+    <string-array name="bookLevel">
+        <item>Lower Primary</item>
+        <item>Upper Primary</item>
+    </string-array>
+
 
 </resources>

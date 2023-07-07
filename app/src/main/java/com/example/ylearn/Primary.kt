@@ -1,7 +1,7 @@
 package com.example.ylearn
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ylearn.databinding.ActivityPrimaryBinding
 
 class Primary : AppCompatActivity() {
@@ -15,5 +15,6 @@ class Primary : AppCompatActivity() {
         binding.ivBack.setOnClickListener {
             onBackPressed()
         }
+
     }
 }

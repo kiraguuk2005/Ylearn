@@ -122,19 +122,6 @@
             app:strokeColor="#F2780C"
             app:strokeWidth="2dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnBraille"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:text="Braille Literacy Activities"
-            android:textColor="#F2780C"
-            android:textSize="10sp"
-            app:strokeColor="#F2780C"
-            app:strokeWidth="2dp" />
-
 
     </LinearLayout>
 
@@ -243,7 +230,7 @@
             app:strokeWidth="2dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bntSST"
+            android:id="@+id/btnSocialStudies"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -277,7 +264,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMathematics"
+            android:id="@+id/btnPE"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

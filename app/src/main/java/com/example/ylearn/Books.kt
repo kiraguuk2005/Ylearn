@@ -1,8 +1,10 @@
 package com.example.ylearn
 
+
+import android.media.VolumeShaper
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.ylearn.bookfragment.BooksFragment
 import com.example.ylearn.bookfragment.UploadBookFragment
@@ -28,12 +30,25 @@ class Books : AppCompatActivity() {
             }
             true
         }
+        if (resources.getColor(R.color.background_tint_dark) == resources.getColor(R.color.background_tint_dark) ) {
+            binding.bottomNavigationView.setBackgroundColor(
+                ContextCompat.getColor(
+                    this,
+                    R.color.background_tint_dark
+                )
+            )
+        } else {
+            binding.bottomNavigationView.setBackgroundColor(
+                ContextCompat.getColor(
+                    this,
+                    R.color.background_tint_light
+                )
+            )
+        }
 
-//        binding.btnRead.setOnClickListener {
-//            launcher.launch("application/pdf")
-//        }
 
     }
+
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
@@ -42,10 +57,5 @@ class Books : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-//    private val launcher = registerForActivityResult(ActivityResultContracts.GetContent()){
-//            uri ->
-//        uri?.let {
-//            binding.pdfView.fromUri(it).load()
-//        }
-//    }
+
 }

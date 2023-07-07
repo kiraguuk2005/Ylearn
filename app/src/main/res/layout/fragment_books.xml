@@ -7,7 +7,7 @@
     tools:context=".bookfragment.BooksFragment">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
@@ -22,12 +22,28 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gridBooksRecyclerView"
-            tools:listitem="@layout/book_card_item"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/book_card_item" />
+
+
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="30dp"
+        android:text="Read"
+        android:backgroundTint="#F2780C"
+        />
+
+
+
 
 
 

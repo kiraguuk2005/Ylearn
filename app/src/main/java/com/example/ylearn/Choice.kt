@@ -25,7 +25,7 @@ class Choice : AppCompatActivity() {
 
         }
         binding.btnEarn.setOnClickListener {
-            startActivity(Intent(this, Earn::class.java))
+            startActivity(Intent(this, EducationMaterials::class.java))
 
         }
         binding.btnbooks.setOnClickListener {

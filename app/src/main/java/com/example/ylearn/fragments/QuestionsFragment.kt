@@ -14,14 +14,13 @@ import com.example.ylearn.FloatingForm
 import com.example.ylearn.QuestionDetail
 import com.example.ylearn.R
 import com.example.ylearn.adapter.QuestionsAdapter
-import com.example.ylearn.databinding.FragmentAiBinding
 import com.example.ylearn.databinding.FragmentQuestionsBinding
 import com.example.ylearn.model.QuestionsData
 
 class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
-    private  var _binding: FragmentQuestionsBinding?= null
-    private val binding  get() = _binding!!
+    private var _binding: FragmentQuestionsBinding? = null
+    private val binding get() = _binding!!
 
 
     private lateinit var adapter: QuestionsAdapter
@@ -61,12 +60,12 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
     }
 
-    override fun onClickCard(id:Int?) {
+    override fun onClickCard(id: Int?) {
         super.onClickCard(id)
         Toast.makeText(requireActivity(), id?.let {
             it.toString()
         }, Toast.LENGTH_SHORT).show()
-        when(id){
+        when (id) {
             R.id.crdContent -> {
                 val intent = Intent(requireActivity(), QuestionDetail::class.java)
                 startActivity(intent)
@@ -87,22 +86,150 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
     private fun dataInitialize() {
         questionArrayList = arrayListOf(
-            QuestionsData(R.drawable.user, "Jeff","Food","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Fifa","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "2 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "3 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","games","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "5 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "7 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
-            QuestionsData(R.drawable.user, "Jeff","Programming","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's", "1 hour","11k Views", "Answers : 5 M"),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Food",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Fifa",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "2 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "3 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "games",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "5 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "7 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
+            QuestionsData(
+                R.drawable.user,
+                "Jeff",
+                "Programming",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                "1 hour",
+                "11k Views",
+                "Answers : 5 M"
+            ),
         )
 
 

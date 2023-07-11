@@ -152,7 +152,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="120dp"
-            android:src="@drawable/b8" />
+            android:src="@drawable/pdf" />
 
     </LinearLayout>
 

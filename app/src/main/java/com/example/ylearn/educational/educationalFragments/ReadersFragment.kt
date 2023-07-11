@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ylearn.R
 import com.example.ylearn.adapter.PdfAdapter
 import com.example.ylearn.databinding.FragmentReadersBinding
+import com.example.ylearn.educational.OpenMaterials
 import com.example.ylearn.educational.UploadMaterial
 import com.example.ylearn.model.pdfModel.PDFData
 
@@ -58,10 +58,10 @@ class ReadersFragment : Fragment(), PdfAdapter.OnPdfClickListener {
     private fun dataInitialize() {
         pdfList = arrayListOf(
             PDFData(R.drawable.b8, "River and The Source"),
-            PDFData(R.drawable.book1, "River and The Source"),
-            PDFData(R.drawable.b8, "River and The Source"),
-            PDFData(R.drawable.book2, "River and The Source"),
-            PDFData(R.drawable.b8, "River and The Source"),
+            PDFData(R.drawable.book1, "Elon Musk"),
+            PDFData(R.drawable.b8, "Mark Zuckergag"),
+            PDFData(R.drawable.book2, "Boys to Men"),
+            PDFData(R.drawable.b8, "Power of the mind"),
             PDFData(R.drawable.book1, "River and The Source"),
             PDFData(R.drawable.b8, "River and The Source"),
             PDFData(R.drawable.book2, "River and The Source"),
@@ -72,8 +72,10 @@ class ReadersFragment : Fragment(), PdfAdapter.OnPdfClickListener {
     }
 
     override fun onPdfClick(pdf: PDFData, position: Int) {
-        Toast.makeText(requireActivity(), "clicked", Toast.LENGTH_SHORT).show()
+        val intent = Intent(requireActivity(), OpenMaterials::class.java)
+        intent.putExtra("image", pdf.image.toString())
+        intent.putExtra("title", pdf.title)
+        startActivity(intent)
     }
-
 
 }

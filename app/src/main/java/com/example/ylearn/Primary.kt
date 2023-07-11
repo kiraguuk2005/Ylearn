@@ -65,7 +65,7 @@ class Primary : AppCompatActivity() {
         binding.btnHomeSci.setOnClickListener {
             startActivity(Intent(this, PrimaryGrades::class.java))
         }
-        binding.btnCreativeArts.setOnClickListener {
+        binding.btnCreative.setOnClickListener {
             startActivity(Intent(this, PrimaryGrades::class.java))
         }
 

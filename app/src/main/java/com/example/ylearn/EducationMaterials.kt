@@ -19,7 +19,7 @@ class EducationMaterials : AppCompatActivity() {
         binding.btnJuniorSec.setOnClickListener {
             startActivity(Intent(this, JuniorSecondary::class.java))
         }
-        binding.btnJuniorSec.setOnClickListener {
+        binding.btnSeniorSec.setOnClickListener {
             startActivity(Intent(this, SeniorSecondary::class.java))
         }
         binding.btnUnderGrad.setOnClickListener {

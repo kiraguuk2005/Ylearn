@@ -12,7 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ylearn"
         tools:targetApi="31">
-
+        <activity
+            android:name=".educational.UploadMaterial"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".educational.sharedClass.StudyMaterials"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".educational.seniorSecondary.SeniorGrades"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".educational.primaryGrades.PrimaryGrades"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".educational.JuniorSecondary.JuniorGrades"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Payment"
             android:exported="false">

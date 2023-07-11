@@ -11,7 +11,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -46,6 +46,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        app:boxStrokeColor="#F2780C"
+        app:hintTextColor="#F2780C"
         android:layout_marginVertical="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginHorizontal="30dp"
@@ -69,6 +71,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        app:boxStrokeColor="#F2780C"
+        app:hintTextColor="#F2780C"
         android:layout_marginVertical="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginHorizontal="30dp"
@@ -92,6 +96,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        app:boxStrokeColor="#F2780C"
+        app:hintTextColor="#F2780C"
         android:layout_marginVertical="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginHorizontal="30dp"

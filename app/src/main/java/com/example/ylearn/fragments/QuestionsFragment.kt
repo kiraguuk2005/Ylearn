@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ylearn.ClickRecyclerBook
 import com.example.ylearn.FloatingForm
 import com.example.ylearn.QuestionDetail
 import com.example.ylearn.R
@@ -30,8 +28,7 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
 
         _binding = FragmentQuestionsBinding.inflate(inflater, container, false)
@@ -210,7 +207,6 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
             ),
         )
 
-
     }
 
     override fun onClick(question: QuestionsData, position: Int) {
@@ -220,9 +216,7 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
         intent.putExtra("topic", question.topic)
         intent.putExtra("time", question.time)
         intent.putExtra("content", question.message)
-
         startActivity(intent)
-
     }
 
 

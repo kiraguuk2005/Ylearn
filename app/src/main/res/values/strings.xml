@@ -19,9 +19,9 @@
         <item>Lower Primary</item>
         <item>Upper Primary</item>
     </string-array>
-    
-    <string name="hyperLink1">Open <a href = "https://www.forbes.com/sites/peterhigh/2022/01/03/top-ten-tech-articles-of-2021/?sh=443f3687634a"> Support</a></string>
-    <string name="hyperLink2">Open <a href = "https://www.youtube.com/watch?v=gMsQO5u7-NQ"> Support</a></string>
+
+    <string name="hyperLink1">Open <a href="https://www.forbes.com/sites/peterhigh/2022/01/03/top-ten-tech-articles-of-2021/?sh=443f3687634a"> Support</a></string>
+    <string name="hyperLink2">Open <a href="https://www.youtube.com/watch?v=gMsQO5u7-NQ"> Support</a></string>
 
 
 </resources>

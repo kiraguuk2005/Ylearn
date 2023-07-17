@@ -9,8 +9,6 @@ class UserProfile : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserProfileBinding
 
-//    private lateinit var userPostAdapter: UserPostAdapter
-//    private lateinit var list: ArrayList<PostData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
@@ -37,33 +35,5 @@ class UserProfile : AppCompatActivity() {
             )
         }
 
-//        binding.userPostRecyclerView.layoutManager = GridLayoutManager(this, 2)
-//        binding.userPostRecyclerView.hasFixedSize()
-//        userPostAdapter = UserPostAdapter(list)
-//        binding.userPostRecyclerView.adapter = userPostAdapter
-//        userPostAdapter.notifyDataSetChanged()
-//
-//
-//        list = ArrayList()
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.bgd, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.bgd, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.bgd, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.bgd, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.bgd, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//        list.add(PostData(R.drawable.user, "11 k"))
-//
-//
-//    }
     }
 }

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ylearn.ClickRecyclerBook
 import com.example.ylearn.FloatingForm
 import com.example.ylearn.QuestionDetail
 import com.example.ylearn.R
@@ -17,7 +18,7 @@ import com.example.ylearn.adapter.QuestionsAdapter
 import com.example.ylearn.databinding.FragmentQuestionsBinding
 import com.example.ylearn.model.QuestionsData
 
-class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
+class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
 
     private var _binding: FragmentQuestionsBinding? = null
     private val binding get() = _binding!!
@@ -60,29 +61,6 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
 
     }
 
-    override fun onClickCard(id: Int?) {
-        super.onClickCard(id)
-        Toast.makeText(requireActivity(), id?.let {
-            it.toString()
-        }, Toast.LENGTH_SHORT).show()
-        when (id) {
-            R.id.crdContent -> {
-                val intent = Intent(requireActivity(), QuestionDetail::class.java)
-                startActivity(intent)
-            }
-
-            R.id.share -> {
-                val sendIntent: Intent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
-                    type = "text/plain"
-                }
-                val shareIntent = Intent.createChooser(sendIntent, null)
-                startActivity(shareIntent)
-            }
-        }
-
-    }
 
     private fun dataInitialize() {
         questionArrayList = arrayListOf(
@@ -232,6 +210,18 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.CardListener {
             ),
         )
 
+
+    }
+
+    override fun onClick(question: QuestionsData, position: Int) {
+        val intent = Intent(requireActivity(), QuestionDetail::class.java)
+        intent.putExtra("image", question.image.toString())
+        intent.putExtra("username", question.userName)
+        intent.putExtra("topic", question.topic)
+        intent.putExtra("time", question.time)
+        intent.putExtra("content", question.message)
+
+        startActivity(intent)
 
     }
 

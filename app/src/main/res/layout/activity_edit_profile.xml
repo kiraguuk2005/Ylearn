@@ -43,7 +43,7 @@
         />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profileImage"
+        android:id="@+id/ivProfileImage"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
@@ -119,5 +119,15 @@
             />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#F2780C"
+        android:layout_marginHorizontal="100dp"
+        />
 
 </LinearLayout>

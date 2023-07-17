@@ -24,7 +24,7 @@ class StudyMaterials : AppCompatActivity() {
 
     private fun setUpTabs() {
         val adapter = EducationMaterialsAdapter(supportFragmentManager)
-        adapter.addFragment(ReadersFragment(), "Readers")
+        adapter.addFragment(ReadersFragment(), "Books(PDF)")
         adapter.addFragment(VideoFragment(), "Videos")
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)

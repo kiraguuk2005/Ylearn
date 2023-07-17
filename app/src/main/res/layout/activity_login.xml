@@ -43,6 +43,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEt"
             android:layout_width="match_parent"
             android:hint="Enter Email"
             android:layout_height="wrap_content"/>
@@ -70,6 +71,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEt"
             android:layout_width="match_parent"
             android:hint="Enter Password"
             android:inputType="textPassword"
@@ -78,6 +80,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <Button
         android:id="@+id/btnNext"
         android:layout_width="match_parent"
@@ -85,6 +89,16 @@
         android:text="NEXT"
         android:backgroundTint="#F2780C"
         android:layout_marginHorizontal="100dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="#F2780C"
+        android:visibility="gone"
         />
 
     <LinearLayout

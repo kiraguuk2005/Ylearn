@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ylearn.databinding.PdfItemBinding
-import com.example.ylearn.educational.educationalFragments.ReadersFragment
 import com.example.ylearn.model.pdfModel.PDFData
 
 class PdfAdapter(
@@ -19,12 +18,20 @@ class PdfAdapter(
             pdfItemBinding.apply {
                 ivBookIcon.setImageResource(pdf.image)
                 tvPdfTitle.text = pdf.title
-
+                tvPdfDesc.text = pdf.description
+                tvPdfSupport.text = pdf.supportLink
             }
             pdfItemBinding.root.setOnClickListener {
                 action.onPdfClick(pdf, adapterPosition)
             }
         }
+
+    }
+
+    fun updateList(list: List<PDFData>) {
+        this.list.clear()
+        this.list.addAll(list)
+        notifyDataSetChanged()
 
     }
 

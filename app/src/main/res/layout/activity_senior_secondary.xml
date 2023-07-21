@@ -44,12 +44,14 @@
             </LinearLayout>
 
             <SearchView
+                android:id="@+id/searchView"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="30dp"
                 android:layout_marginHorizontal="30dp"
                 android:queryHint="Search Here...."
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/search"
+                android:iconifiedByDefault="false"
                 />
 
             <TextView

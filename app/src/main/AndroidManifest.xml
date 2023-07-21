@@ -11,9 +11,24 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:name=".timber.Ylearn"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ylearn"
         tools:targetApi="31">
+        <activity
+            android:name=".educational.sharedClass.OpenMaterials"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".educational.sharedClass.SyllabusMaterials"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Answers"
             android:exported="false">
@@ -21,13 +36,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".educational.OpenMaterials"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".educational.UploadMaterial"
             android:exported="false">
@@ -35,13 +44,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".educational.sharedClass.StudyMaterials"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".educational.seniorSecondary.SeniorGrades"
             android:exported="false">

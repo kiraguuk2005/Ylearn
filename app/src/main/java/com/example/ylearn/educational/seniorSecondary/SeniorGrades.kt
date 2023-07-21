@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ylearn.databinding.ActivitySeniorGradesBinding
-import com.example.ylearn.educational.sharedClass.StudyMaterials
+import com.example.ylearn.educational.sharedClass.SyllabusMaterials
 
 class SeniorGrades : AppCompatActivity() {
     private lateinit var binding: ActivitySeniorGradesBinding
@@ -15,13 +15,13 @@ class SeniorGrades : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnGradeTen.setOnClickListener {
-            startActivity(Intent(this, StudyMaterials::class.java))
+            startActivity(Intent(this, SyllabusMaterials::class.java))
         }
         binding.btnGradeEleven.setOnClickListener {
-            startActivity(Intent(this, StudyMaterials::class.java))
+            startActivity(Intent(this, SyllabusMaterials::class.java))
         }
         binding.btnGradeTwelve.setOnClickListener {
-            startActivity(Intent(this, StudyMaterials::class.java))
+            startActivity(Intent(this, SyllabusMaterials::class.java))
         }
 
         binding.ivBack.setOnClickListener {

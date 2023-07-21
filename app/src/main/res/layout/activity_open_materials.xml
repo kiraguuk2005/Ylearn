@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".educational.OpenMaterials">
+    tools:context=".educational.sharedClass.OpenMaterials">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,7 +82,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/hyperLink1"
         android:textColor="#1BA0DD" />
 
     <TextView
@@ -90,16 +89,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Youtube Support Link"
+        android:text="Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/supportLink2"
+        android:id="@+id/pdfDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/hyperLink2"
         android:textColor="#1BA0DD" />
 
     <LinearLayout
@@ -116,7 +114,7 @@
             android:src="@drawable/pdf"/>
 
         <TextView
-            android:id="@+id/pdfTitle2"
+            android:id="@+id/pdfUrl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="System Analysis and design"

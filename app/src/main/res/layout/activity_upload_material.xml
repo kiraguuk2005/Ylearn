@@ -49,6 +49,7 @@
         app:hintTextColor="#F2780C">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pdfTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Title" />
@@ -72,6 +73,7 @@
         app:hintTextColor="#F2780C">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pdfSupport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter URL" />
@@ -84,20 +86,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Please Provide a YouTube Support for your PDF" />
+        android:text="Please Provide a Descricption for your PDF" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_marginHorizontal="30dp"
         app:boxStrokeColor="#F2780C"
         app:hintTextColor="#F2780C">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textMultiLine"
+            android:lineSpacingMultiplier="1.8"
+            android:gravity="top"
+            android:background="@null"
+            android:ems="10"
+            android:id="@+id/pdfDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Youtube Link" />
+            android:layout_height="140dp"
+            android:hint="Enter Description" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -107,18 +115,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_camera_alt_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Upload Pdf Cover Page" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -137,21 +136,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/b8" />
-
 
         <ImageView
+            android:id="@+id/pickPdf"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="120dp"
             android:src="@drawable/pdf" />
 
     </LinearLayout>

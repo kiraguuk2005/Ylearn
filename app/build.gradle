@@ -77,4 +77,7 @@ dependencies {
 
     //ai
     implementation 'com.android.volley:volley:1.2.1'
+
+    //timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 }

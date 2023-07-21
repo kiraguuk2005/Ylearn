@@ -40,6 +40,7 @@
         android:layout_marginHorizontal="18dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bookTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Book Title"
@@ -116,6 +117,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Book Price"
@@ -141,6 +143,7 @@
         android:layout_marginHorizontal="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvDesc"
             android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:gravity="top"
@@ -151,6 +154,8 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/btnUpload"

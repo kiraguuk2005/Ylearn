@@ -56,5 +56,15 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn844"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#F2780C"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="8-4-4 System"
+        />
+
 
 </LinearLayout>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".QuestionDetail">
 
@@ -133,7 +134,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/outline"
@@ -148,61 +149,13 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imageUserPost"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/user" />
-
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvPosterName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="20dp"
-                            android:layout_marginTop="10dp"
-                            android:text="John doe"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvPosterTopic"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="20dp"
-                            android:text="Programming"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tvpostTime"
-                        android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:layout_marginStart="70dp"
-                        android:layout_marginTop="10dp"
-                        android:text="1 hour" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="380dp"
-                    android:layout_height="370dp"
-                    android:layout_marginHorizontal="10dp"
+                <androidx.recyclerview.widget.RecyclerView
                     android:layout_marginTop="5dp"
-                    android:text="TCP/IP and UDP are both protocols used for communication between devices over the internet. Here are the differences between them:
-Connection-oriented vs. connectionless: TCP (Transmission Control Protocol) is a connection-oriented protocol, which means that a connection is established before data transfer can occur. UDP (User Datagram Protocol), on the other hand, is a connectionless protocol, which means that data can be sent without establishing a connection.
-Reliability: TCP is a reliable protocol, which means that it ensures that all packets are received in the correct order, and retransmits any packets that are lost or damaged. UDP is an unreliable protocol, which means that it does not "
-
+                    android:id="@+id/timeLineRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/answer_item"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     />
 
 

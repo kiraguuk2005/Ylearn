@@ -15,15 +15,33 @@ class BooksAdapter(private val list: ArrayList<BooksData>, val clickListener: On
 
         fun setData(book: BooksData, action: OnBookClickListener) {
             bookCardItemBinding.apply {
-                ivPost.setImageResource(book.image)
-                tvTitle.text = book.title
-                tvContent.text = book.content
-                tvPrice.text = book.price
+                tvTitle.text = book.bookTitle
+                tvContent.text = book.bookDescription
+                tvPrice.text = book.bookPrice
+
             }
             bookCardItemBinding.root.setOnClickListener {
                 action.onBookClick(book, adapterPosition)
             }
         }
+    }
+
+    private val booksList = ArrayList<BooksData>()
+    private val fullList = ArrayList<BooksData>()
+
+    fun filterList(search: String) {
+        booksList.clear()
+
+        for (item in fullList) {
+            if (item.bookTitle?.lowercase()
+                    ?.contains(search.lowercase()) == true || item.bookDescription?.lowercase()
+                    ?.contains(search.lowercase()) == true
+            ) {
+                booksList.add(item)
+            }
+        }
+        notifyDataSetChanged()
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksViewHolder {

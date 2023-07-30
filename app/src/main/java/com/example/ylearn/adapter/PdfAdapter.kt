@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ylearn.databinding.PdfItemBinding
+import com.example.ylearn.model.booksModel.BooksData
 import com.example.ylearn.model.pdfModel.PDFData
 
 class PdfAdapter(
@@ -16,7 +17,6 @@ class PdfAdapter(
         RecyclerView.ViewHolder(pdfItemBinding.root) {
         fun setData(pdf: PDFData, action: PdfAdapter.OnPdfClickListener) {
             pdfItemBinding.apply {
-                ivBookIcon.setImageResource(pdf.image)
                 tvPdfTitle.text = pdf.title
                 tvPdfDesc.text = pdf.description
                 tvPdfSupport.text = pdf.supportLink
@@ -25,6 +25,24 @@ class PdfAdapter(
                 action.onPdfClick(pdf, adapterPosition)
             }
         }
+
+    }
+
+    private val pdfsList = ArrayList<PDFData>()
+    private val fullList = ArrayList<PDFData>()
+
+    fun filterList(search: String) {
+        pdfsList.clear()
+
+        for (item in fullList) {
+            if (item.title?.lowercase()
+                    ?.contains(search.lowercase()) == true || item.description?.lowercase()
+                    ?.contains(search.lowercase()) == true
+            ) {
+                pdfsList.add(item)
+            }
+        }
+        notifyDataSetChanged()
 
     }
 

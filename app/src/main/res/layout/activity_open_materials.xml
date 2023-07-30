@@ -42,28 +42,28 @@
         app:cardElevation="4dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/pdfIcon"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/book1" />
+                android:id="@+id/pdf_image"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/pdf"/>
 
             <TextView
                 android:id="@+id/pdfTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
                 android:text="System Analysis and design"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                android:layout_marginTop="40dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="15sp"
+                />
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -99,32 +99,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:textColor="#1BA0DD" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/pdf_image"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/pdf"/>
-
-        <TextView
-            android:id="@+id/pdfUrl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Analysis and design"
-            android:layout_marginTop="40dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textSize="15sp"
-            />
-
-    </LinearLayout>
-
 
     <Button
         android:id="@+id/btnDownload"

@@ -10,7 +10,7 @@ import timber.log.Timber
 class PdfViewModel : ViewModel() {
 
     private val databaseReference: DatabaseReference =
-        FirebaseDatabase.getInstance().getReference("Books")
+        FirebaseDatabase.getInstance().getReference("pdfs")
 
     //    private val repository: PdfRepository = PdfRepository().getInstance()
     private val _allPdfs = MutableLiveData<List<PDFData>>()

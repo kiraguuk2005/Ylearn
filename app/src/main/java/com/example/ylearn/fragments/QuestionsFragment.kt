@@ -15,6 +15,10 @@ import com.example.ylearn.R
 import com.example.ylearn.adapter.QuestionsAdapter
 import com.example.ylearn.databinding.FragmentQuestionsBinding
 import com.example.ylearn.model.QuestionsData
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
 
@@ -25,6 +29,9 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
     private lateinit var adapter: QuestionsAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var questionArrayList: ArrayList<QuestionsData>
+
+//    var database = FirebaseDatabase.getInstance()
+//    val questionsReference = database.getReference("ppatientrequest")
 
 
     override fun onCreateView(
@@ -51,13 +58,14 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
+//        loadQuestions("SDF")
+
         binding.FAB.setOnClickListener {
             val intent = Intent(requireActivity(), FloatingForm::class.java)
             startActivity(intent)
         }
 
     }
-
 
     private fun dataInitialize() {
         questionArrayList = arrayListOf(
@@ -218,6 +226,26 @@ class QuestionsFragment : Fragment(), QuestionsAdapter.onQuestionClickLisener {
         intent.putExtra("content", question.message)
         startActivity(intent)
     }
+
+//    fun loadQuestions(prodkey: String?) {
+//        questionsReference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                var questionArrayList = ArrayList<QuestionsData>()
+//                for (childSnapshot in dataSnapshot.children) {
+//                    val question = childSnapshot.getValue(QuestionsData::class.java)
+//                    question?.let { questionArrayList.add(it) }
+//                }
+//                questionArrayList = questionArrayList.reversed() as ArrayList<QuestionsData>
+//                adapter = QuestionsAdapter(questionArrayList, this@QuestionsFragment)
+//                recyclerView.adapter = adapter
+//                adapter.notifyDataSetChanged()
+//            }
+//
+//            override fun onCancelled(databaseError: DatabaseError) {
+//                // Handle the error
+//            }
+//        })
+//    }
 
 
 }

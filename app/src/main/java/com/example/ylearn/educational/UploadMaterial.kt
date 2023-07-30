@@ -111,16 +111,13 @@ class UploadMaterial : AppCompatActivity() {
         val hashMap: HashMap<String, Any> = HashMap()
 
         hashMap["uid"] = "$uid"
-//        hashMap["id"] = "$timeStamp"
         hashMap["title"] = "$title"
         hashMap["support"] = "$support"
         hashMap["description"] = "$description"
         hashMap["url"] = "$uploadedPdfUrl"
-//        hashMap["timestamp"] = timeStamp
-//        hashMap["viewCount"] = 0
-//        hashMap["downloadCount"] = 0
 
-        val ref = FirebaseDatabase.getInstance().getReference("Books")
+
+        val ref = FirebaseDatabase.getInstance().getReference("pdfs")
         ref.child("$timeStamp")
             .setValue(hashMap)
             .addOnSuccessListener {
@@ -144,8 +141,6 @@ class UploadMaterial : AppCompatActivity() {
                 ).show()
 
             }
-
-
     }
 
     private fun pickPdfIntent() {

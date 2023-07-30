@@ -18,14 +18,12 @@ class ClickRecyclerBook : AppCompatActivity() {
         binding.apply {
             intent
 
-            ivPost.setImageResource(intent.getStringExtra("image")!!.toInt())
             tvTitle.text = intent.getStringExtra("title")
             tvContent.text = intent.getStringExtra("content")
             tvPrice.text = intent.getStringExtra("price")
         }
 
         binding.btnBuy.setOnClickListener {
-//            val book = BooksData(content = "", image = R.drawable.b8, title = binding.tvTitle.text.toString(), price = binding.tvPrice.text.toString())
             val intent = Intent(this, Payment::class.java)
             intent.putExtra("title", binding.tvTitle.text.toString())
             intent.putExtra("price", binding.tvPrice.text.toString())

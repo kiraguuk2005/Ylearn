@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,10 @@ import com.example.ylearn.ReadBook
 import com.example.ylearn.adapter.BooksAdapter
 import com.example.ylearn.databinding.FragmentBooksBinding
 import com.example.ylearn.model.booksModel.BooksData
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class BooksFragment : Fragment(), BooksAdapter.OnBookClickListener {
@@ -23,6 +28,10 @@ class BooksFragment : Fragment(), BooksAdapter.OnBookClickListener {
     private lateinit var adapter: BooksAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var booksArrayList: ArrayList<BooksData>
+
+    //read pdfs,
+    var database = FirebaseDatabase.getInstance()
+    val booksReference = database.getReference("books")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,152 +55,153 @@ class BooksFragment : Fragment(), BooksAdapter.OnBookClickListener {
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
+        loadBooks("mybooks")
+
         binding.btnRead.setOnClickListener {
             val intent = Intent(requireActivity(), ReadBook::class.java)
             startActivity(intent)
         }
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    adapter.filterList(newText)
+                }
+                return true
+            }
+
+        })
+
+
+    }
+
+    fun loadBooks(prodkey: String?) {
+        booksReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var bookArrayList = ArrayList<BooksData>()
+                for (childSnapshot in dataSnapshot.children) {
+                    val books = childSnapshot.getValue(BooksData::class.java)
+                    books?.let { bookArrayList.add(it) }
+                }
+                adapter = BooksAdapter(bookArrayList, this@BooksFragment)
+                recyclerView.adapter = adapter
+                adapter.notifyDataSetChanged()
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle the error
+            }
+        })
 
     }
 
     private fun dataInitialize() {
         booksArrayList = arrayListOf(
             BooksData(
-                R.drawable.b8,
                 "Harry Potter",
                 "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
+                "Ksh 1000",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment. Shelley started writing the story when she was 18, and the first edition was published anonymously in London on 1 January 1818, when she was 20. Her name first appeared in the second edition, which was published in Paris in 1821.",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.book2,
                 "Nineteen Eighty-Four",
                 "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
+                "Ksh 500",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.book1,
                 "Frankenstein",
                 "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
+                "Ksh 1200",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.b8,
                 "Harry Potter",
                 "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
+                "Ksh 1000",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.book2,
+                "Frankenstein",
+                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
+                "Ksh 1200",
+                "",
+                ""
+            ),
+            BooksData(
+                "Harry Potter",
+                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
+                "Ksh 1000",
+                "",
+                ""
+            ),
+            BooksData(
+                "Frankenstein",
+                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
+                "Ksh 1200",
+                "",
+                ""
+            ),
+            BooksData(
                 "Nineteen Eighty-Four",
                 "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
+                "Ksh 500",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.b8,
                 "Harry Potter",
                 "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
+                "Ksh 1000",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.book1,
                 "Frankenstein",
                 "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
+                "Ksh 1200",
+                "",
+                ""
             ),
             BooksData(
-                R.drawable.book2,
+
+                "Harry Potter",
+                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
+                "Ksh 1000",
+                "",
+                ""
+            ),
+            BooksData(
+
+                "Frankenstein",
+                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
+                "Ksh 1200",
+                "",
+                ""
+            ),
+            BooksData(
+
+                "Harry Potter",
+                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
+                "Ksh 1000",
+                "",
+                ""
+            ),
+            BooksData(
                 "Nineteen Eighty-Four",
                 "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book2,
-                "Nineteen Eighty-Four",
-                "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
-            ),
-            BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.book2,
-                "Nineteen Eighty-Four",
-                "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book1,
-                "Frankenstein",
-                "Frankenstein; or, The Modern Prometheus is an 1818 novel written by English author Mary Shelley. Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment",
-                "Ksh 1200"
-            ),
-            BooksData(
-                R.drawable.b8,
-                "Harry Potter",
-                "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts",
-                "Ksh 1000"
-            ),
-            BooksData(
-                R.drawable.book2,
-                "Nineteen Eighty-Four",
-                "Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime",
-                "Ksh 500"
+                "Ksh 500",
+                "",
+                ""
             ),
         )
 
@@ -199,10 +209,9 @@ class BooksFragment : Fragment(), BooksAdapter.OnBookClickListener {
 
     override fun onBookClick(book: BooksData, position: Int) {
         val intent = Intent(requireActivity(), ClickRecyclerBook::class.java)
-        intent.putExtra("image", book.image.toString())
-        intent.putExtra("title", book.title)
-        intent.putExtra("content", book.content)
-        intent.putExtra("price", book.price)
+        intent.putExtra("title", book.bookTitle)
+        intent.putExtra("description", book.bookDescription)
+        intent.putExtra("price", book.bookPrice)
         startActivity(intent)
     }
 

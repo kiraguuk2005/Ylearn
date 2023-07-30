@@ -25,6 +25,9 @@ class EducationMaterials : AppCompatActivity() {
         binding.btnUnderGrad.setOnClickListener {
             startActivity(Intent(this, UnderGraduate::class.java))
         }
+        binding.btn844.setOnClickListener {
+            startActivity(Intent(this, Eight44::class.java))
+        }
 
     }
 }

@@ -1,6 +1,8 @@
 package com.example.ylearn
 
+import android.app.ProgressDialog
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
@@ -10,6 +12,7 @@ import com.example.ylearn.model.profile.Profile
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 import java.util.*
 
 class EditProfile : AppCompatActivity() {
@@ -39,7 +42,7 @@ class EditProfile : AppCompatActivity() {
         }
 
         binding.ivBack.setOnClickListener {
-            startActivity(Intent(this, UserProfile::class.java))
+            onBackPressed()
         }
 
         database = FirebaseDatabase.getInstance()
@@ -54,7 +57,29 @@ class EditProfile : AppCompatActivity() {
         }
 
         binding.btnSave.setOnClickListener {
+
+            val progressDialog = ProgressDialog(this)
+            progressDialog.setMessage("Uploading Details")
+            progressDialog.setCancelable(false)
+            progressDialog.show()
+
             uploadData()
+
+            val imageName = binding.userName.text.toString()
+            val storageRef =
+                FirebaseStorage.getInstance().reference.child("Profile Pics/$imageName.jpg")
+            val localFile = File.createTempFile("tempImage", "jpg")
+            storageRef.getFile(localFile)
+                .addOnSuccessListener {
+                    if (progressDialog.isShowing)
+                        progressDialog.dismiss()
+                    val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+                    binding.ivProfileImage.setImageBitmap(bitmap)
+                }.addOnFailureListener {
+                    if (progressDialog.isShowing)
+                        progressDialog.dismiss()
+                    Toast.makeText(this, "Failed to retrieve Image", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 
@@ -93,6 +118,5 @@ class EditProfile : AppCompatActivity() {
             }
         }
     }
-
 
 }

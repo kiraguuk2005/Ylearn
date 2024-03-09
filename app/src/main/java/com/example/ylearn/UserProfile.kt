@@ -17,6 +17,7 @@ class UserProfile : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
         binding.editProfile.setOnClickListener {
             startActivity(
                 Intent(this, EditProfile::class.java)
@@ -36,4 +37,5 @@ class UserProfile : AppCompatActivity() {
         }
 
     }
+
 }

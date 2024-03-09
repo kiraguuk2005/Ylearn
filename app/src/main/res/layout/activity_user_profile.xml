@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".UserProfile">
 
     <LinearLayout
@@ -14,14 +14,13 @@
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
-       <ImageView
-           android:id="@+id/ivBack"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/ic_baseline_arrow_back_ios_24"
-           android:layout_gravity="center"
-           android:layout_marginStart="20sp"
-           />
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
 
         <ImageView
             android:layout_width="150dp"
@@ -39,81 +38,76 @@
 
     </LinearLayout>
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profileImage"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="centerCrop"
         android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/user"
         tools:ignore="MissingClass" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="John Doe"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="John Doe"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="\@bio"
         android:textAlignment="center"
-        android:layout_marginTop="5dp"
-        android:textSize="18sp"
-        />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/editProfile"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="Edit Profile"
         android:layout_gravity="center"
         android:backgroundTint="#F2780C"
-        />
+        android:text="Edit Profile" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100k Following"
             android:layout_margin="10dp"
-            />
+            android:text="100k Following" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100k Followers"
             android:layout_margin="10dp"
-            />
+            android:text="100k Followers" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100k Likes"
             android:layout_margin="10dp"
-            />
+            android:text="100k Likes" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Posts"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:gravity="center"
-        />
+        android:text="Posts"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userPostRecyclerView"

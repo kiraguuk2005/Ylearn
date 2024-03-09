@@ -123,7 +123,7 @@ class SyllabusMaterials : AppCompatActivity(), PdfAdapter.OnPdfClickListener {
                     val pdfs = childSnapshot.getValue(PDFData::class.java)
                     if (pdfs != null) {
                         if (pdfs.level == level && pdfs.subject == subject && pdfs.grade == grade)
-                            pdfs?.let { pdfArrayList.add(it) }
+                            pdfs.let { pdfArrayList.add(it) }
                     }
                 }
 

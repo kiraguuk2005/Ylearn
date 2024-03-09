@@ -35,7 +35,7 @@ class Home : AppCompatActivity() {
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(QuestionsFragment(), "Questions")
-        adapter.addFragment(SearchFragment(), "Search")
+        adapter.addFragment(SearchFragment(), "Image Question")
         adapter.addFragment(VideoFragment(), "Videos")
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)

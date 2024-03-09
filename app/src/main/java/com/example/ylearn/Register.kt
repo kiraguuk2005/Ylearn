@@ -1,18 +1,22 @@
 package com.example.ylearn
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ylearn.databinding.ActivityRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class Register : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
+    private val TAG = "Register"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -30,13 +34,17 @@ class Register : AppCompatActivity() {
 
     }
 
+    private var user = ""
+    private var email = ""
+    private var phone = ""
+
     private fun registerEvents() {
         auth = FirebaseAuth.getInstance()
         binding.btnRegister.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim()
+            email = binding.etEmail.text.toString().trim()
             val pass = binding.passEt.text.toString().trim()
-            val user = binding.userName.text.toString().trim()
-            val phone = binding.etPhone.text.toString().trim()
+            user = binding.userName.text.toString().trim()
+            phone = binding.etPhone.text.toString().trim()
             val verifyPass = binding.verifyPassEt.text.toString().trim()
 
             if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty()) {
@@ -45,6 +53,9 @@ class Register : AppCompatActivity() {
                     auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(
                         OnCompleteListener {
                             if (it.isSuccessful) {
+
+                                createUserDetails(timeStamp)
+
                                 binding.etEmail.text?.clear()
                                 binding.passEt.text?.clear()
                                 binding.userName.text?.clear()
@@ -88,6 +99,41 @@ class Register : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+
+    val timeStamp = System.currentTimeMillis()
+    private fun createUserDetails(timeStamp: Long) {
+        Log.d(TAG, "Uploading to Database")
+        val uid = FirebaseAuth.getInstance().uid
+        val hashMap: HashMap<String, Any> = HashMap()
+
+        hashMap["uid"] = "$uid"
+        hashMap["Name"] = "$user"
+        hashMap["Email"] = "$email"
+        hashMap["PhoneNumber"] = "$phone"
+
+        val ref = FirebaseDatabase.getInstance().getReference("registeredUser")
+        ref.child("$timeStamp")
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                Log.d(TAG, "Registered")
+                Toast.makeText(
+                    this,
+                    "Registered Succesfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+            .addOnFailureListener { e ->
+                Log.d(TAG, "Uploading to Storage Failed due to ${e.message}")
+                Toast.makeText(
+                    this,
+                    "Registration Failed due to ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
     }
 }
 

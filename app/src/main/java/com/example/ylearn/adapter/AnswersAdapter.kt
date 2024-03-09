@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ylearn.databinding.AnswerItemBinding
 import com.example.ylearn.model.AnswersData
 
-class AnswersAdapter(private val list: ArrayList<AnswersData>, val clickListener: OnAnswerClickListener) :
+class AnswersAdapter(
+    private val list: ArrayList<AnswersData>,
+    val clickListener: OnAnswerClickListener
+) :
     RecyclerView.Adapter<AnswersAdapter.AnswersViewHolder>() {
 
     inner class AnswersViewHolder(val answerItemBinding: AnswerItemBinding) :

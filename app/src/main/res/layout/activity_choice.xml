@@ -58,6 +58,29 @@
         android:layout_marginHorizontal="100dp"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/recyclerView"
+        tools:listitem="@layout/each_item"
+        />
 
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnAdvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Advertise"
+        android:backgroundTint="#F2780C"
+        android:layout_marginHorizontal="100dp"
+        />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:backgroundTint="#F2780C"
+        android:layout_marginHorizontal="100dp"
+        />
+
+    </LinearLayout>

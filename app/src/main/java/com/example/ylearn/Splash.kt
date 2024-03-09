@@ -21,6 +21,7 @@ class Splash : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         Handler(Looper.myLooper()!!).postDelayed(Runnable {
             if (auth.currentUser != null) {
+
                 val intent = Intent(this, Choice::class.java)
                 startActivity(intent)
                 finish()
